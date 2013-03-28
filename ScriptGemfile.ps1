@@ -1,5 +1,5 @@
 ﻿New-Item C:\OurRubyProject\Gemfile -type file -value "source 'https://rubygems.org'
-
+# add gems after line
 gem 'rails', '3.2.8'
 
 gem 'sqlite3'
