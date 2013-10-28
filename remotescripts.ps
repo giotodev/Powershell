@@ -1,0 +1,28 @@
+## Enter a remote session with a server
+enter-pssession [SERVER]
+
+## Object-Oriented Approach
+$s1 = [SERVER]
+enter-pssession #s1
+
+
+$SqlConnection = New-Object System.Data.SqlClient.SqlConnection
+$SqlConnection.ConnectionString = "SERVER=[SERVER];DATABASE=[DATABASE];Integrated Security=True"
+ 
+$SqlCmd = New-Object System.Data.SqlClient.SqlCommand
+$SqlCmd.CommandText = "SELECT * FROM MyTable"
+$SqlCmd.Connection = $SqlConnection
+ 
+$SqlAdapter = New-Object System.Data.SqlClient.SqlDataAdapter
+$SqlAdapter.SelectCommand = $SqlCmd
+ 
+$DataSet = New-Object System.Data.DataSet
+$SqlAdapter.Fill($DataSet)
+ 
+$SqlConnection.Close()
+ 
+$DataSet.Tables[0]
+
+
+## Exit remote server
+exit-pssession
