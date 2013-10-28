@@ -1,0 +1,16 @@
+<#
+
+Loop through multiple servers
+
+#>
+
+
+$servers = "SERVERONE","SERVERTWO","SERVERTHREE","SERVERFOUR"
+
+
+foreach ($serv in $servers)
+{
+  enter pssession $server
+  get-process
+  exit-pssession
+}
