@@ -1,6 +1,6 @@
 ## Version Table
 
-$PSVersionTable
+$PSVersionTable.psversion
 
 ## Version listed
 get-host
