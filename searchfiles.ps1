@@ -14,3 +14,7 @@ Select-String "ERR.." document.txt | Select -Expand Matches | Select -Expand Val
 
 ## Multiple files
  Get-ChildItem -Filter *.txt -Recurse | Select-String "word" | Select -Expand Matches
+ 
+## OO Approach
+$string = "word"
+ Get-ChildItem -Filter *.txt -Recurse | Select-String $string | Select -Expand Matches
