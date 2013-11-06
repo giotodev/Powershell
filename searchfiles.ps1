@@ -18,3 +18,13 @@ Select-String "ERR.." document.txt | Select -Expand Matches | Select -Expand Val
 ## OO Approach
 $string = "word"
  Get-ChildItem -Filter *.txt -Recurse | Select-String $string | Select -Expand Matches
+
+
+
+
+
+## Windows logs
+Get-WinEvent -ListLog * -EA silentlycontinue |
+where-object { $_.recordcount -AND $_.lastwritetime -gt [datetime]::today} |
+foreach-object { get-winevent -LogName $_.logname -MaxEvents 1 } |
+Format-Table TimeCreated, ProviderName, Message -AutoSize –Wrap | Out-File C:\Logs\Log1.txt
