@@ -1,4 +1,4 @@
-��## ONLY change these values inside the parentheses (all are strings so the values need to remain in parenthesis)
+## ONLY change these values inside the parentheses (all are strings so the values need to remain in parenthesis)
 
 $SQLServer = "OurServerName"
 $Database = "OurDatabaseName"
@@ -7,7 +7,7 @@ $Query = "OurQuery"
 
 
 
-## These values don't change
+## These values don't change (for multiple servers, use foreach)
 
 $SqlConnection = New-Object System.Data.SqlClient.SqlConnection
 $SqlConnection.ConnectionString = "Server=$SQLSERVER;Database=$DATABASE;Integrated Security=True"
