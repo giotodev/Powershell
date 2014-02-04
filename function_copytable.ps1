@@ -19,7 +19,7 @@ Function CopyTable($srcServer, $srcDatabase, $destServer, $destDatabase, $bothTa
             $copy = New-Object Data.SqlClient.SqlBulkCopy($dest)
             $copy.DestinationTableName = $bothTable
             $copy.WriteToServer($reading)
-            "Job step successful."
+            Write-Host "Table copied from " + $srcServer + " to " + $destServer + "."
         }
         catch [System.Exception]
         {
