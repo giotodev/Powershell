@@ -1,6 +1,3 @@
-##  THIS IS A POWERSHELL FILE (ps1 doesn't work as extension currently - change later)
-
-
 ## Source
 $srcServer = "SERVERONE\INSTANCE"
 $srcDatabase = "DatabaseOne"
@@ -31,11 +28,12 @@ try
         $copy = New-Object Data.SqlClient.SqlBulkCopy($dest)
         $copy.DestinationTableName = $bothTable
         $copy.WriteToServer($reading)
+        Write-Host "Table copied from " + $srcServer + " to " + $destServer + "."
     }
     catch [System.Exception]
     {
         $ex = $_.Exception
-        Write-Host $ex.Message
+        throw($ex.Message)
     }
     finally
     {
@@ -46,5 +44,5 @@ try
 }
 catch
 {
-    "Cannot open a connection to the source."
+    throw("Cannot open a connection to the source.")
 }
