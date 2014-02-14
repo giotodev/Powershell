@@ -1,7 +1,7 @@
 [System.Reflection.Assembly]::LoadWithPartialName("Microsoft.SqlServer.SMO") | out-null
 
-$serv = new-object ('Microsoft.SqlServer.Management.Smo.Server') 'SAMSUNG-PC\SQLEXPRESS'
-$db = $serv.Databases["CrossFit"]
+$serv = new-object ('Microsoft.SqlServer.Management.Smo.Server') 'SERVER\INSTANCE'
+$db = $serv.Databases["Database"]
 $ts = $db.Tables
 
 foreach ($t in $ts)
