@@ -1,3 +1,5 @@
+## Re-name description
+
 [System.Reflection.Assembly]::LoadWithPartialName("Microsoft.SqlServer.SMO") | out-null
 
 $serv = new-object ('Microsoft.SqlServer.Management.Smo.Server') 'SERVER\INSTANCE'
