@@ -24,16 +24,16 @@ Function CleanStrings ($string)
 [System.Reflection.Assembly]::LoadWithPartialName("Microsoft.SqlServer.Smo") | Out-Null
 
 $p = New-Object "Microsoft.SqlServer.Management.Smo.Server" $prod
-$srv = New-Object "Microsoft.SqlServer.Management.Smo.Server" $qa
+$q = New-Object "Microsoft.SqlServer.Management.Smo.Server" $qa
 
-$copyfrom = $p.JobServer.Jobs | Select-Object -ExpandProperty Name
-$copyto = $srv.JobServer.Jobs | Select-Object -ExpandProperty Name
+$copyit = $p.JobServer.Jobs | Select-Object -ExpandProperty Name
+$cleanit = $q.JobServer.Jobs | Select-Object -ExpandProperty Name
 
-$arr = Compare-Object $copyfrom $copyto |
+$arr = Compare-Object $copyit $cleanit |
         Where-Object {$_.SideIndicator -ne "<="} |
         Select-Object -ExpandProperty InputObject
 
-foreach ($j in $srv.JobServer.Jobs)
+foreach ($j in $q.JobServer.Jobs)
 {
     if ($arr -like $j.Name)
     {
