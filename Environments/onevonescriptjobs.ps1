@@ -12,14 +12,11 @@ $prod = "PRODSERVER\INST"
 $file = "C:\OurJobPath\"
 
 
+
 Function CleanStrings ($string)
 {
-    $x = $string.Replace("\","")
-    $x = $x.Replace("/","")
-    $x = $x.Replace("#","")
-    $x = $x.Replace(":","")
-    $x = $x.Replace("(","")
-    $x = $x.Replace(")","")
+    [System.Text.RegularExpressions.Regex]
+    $x = [System.Text.RegularExpressions.Regex]::Replace($string,"[^1-9a-zA-Z_]","")
     return $x
 }
 
