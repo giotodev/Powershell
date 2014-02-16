@@ -1,7 +1,9 @@
 <#
 
   This script will compare jobs in a QA environment to jobs in a PROD environment then script out the jobs in QA that
-  don't exist in PROD (and remove those jobs - though this step is coded out).
+  don't exist in PROD.
+  
+  After the step $j.Script() | Out-File $jobFile, we can add $j.Drop if we want to remove the job.
   
 #>
 
@@ -42,6 +44,5 @@ foreach ($j in $q.JobServer.Jobs)
         $jobFile = $file + $jName + ".sql"
         Write-Host $jobFile
         $j.Script() | Out-File $jobFile
-        ## $j.Drop
     }
 }
