@@ -4,6 +4,7 @@
   don't exist in PROD.
   
   After the step $j.Script() | Out-File $jobFile, we can add $j.Drop if we want to remove the job.
+  Save script to variable, use variable to .Replace("string","stringtwo")
   
 #>
 
