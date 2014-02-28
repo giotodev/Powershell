@@ -38,7 +38,7 @@ $arr = Compare-Object $copyit $cleanit |
 
 foreach ($j in $q.JobServer.Jobs)
 {
-    if ($arr -like $j.Name)
+    if ($arr -like $j.Name) ##-and ($arr -notlike "*word*")
     {
         $jName = $j.Name
         $jName = CleanStrings $jName
