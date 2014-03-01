@@ -43,7 +43,8 @@ foreach ($j in $q.JobServer.Jobs)
         $jName = $j.Name
         $jName = CleanStrings $jName
         $jobFile = $file + $jName + ".sql"
-        Write-Host $jobFile
+        ## Testing and confirmation only
+        ##Write-Host $jobFile
         $j.Script() | Out-File $jobFile
     }
 }
