@@ -1,6 +1,7 @@
 <# 
 
   Extract TSQL DATE or DATETIME format from file.
+  File Length: $c.Length
 
 #>
 
