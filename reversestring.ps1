@@ -4,7 +4,7 @@ Function Reverse ($s)
 {
     $r = $s -split ""
     [array]::Reverse($r)
-    return $r -join ''
+    return $r -join ""
 }
 
 Reverse -s "This is like the REVERSE function in TSQL"
