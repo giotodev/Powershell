@@ -1,3 +1,7 @@
+<#
+  Auto Rep
+#>
+
 $ex = New-Object -ComObject Excel.Application
 $ex.Visible = $true
 $wb = $ex.WorkBooks.Add()
