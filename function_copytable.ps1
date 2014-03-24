@@ -30,7 +30,7 @@ Function CopyTable($srcServer, $srcDatabase, $destServer, $destDatabase, $bothTa
         {
             $reading.Close()
             $src.Close()
-            $copy.Close()
+            $dest.Close()
         }
     }
     catch
