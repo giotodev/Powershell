@@ -30,4 +30,4 @@
 
 }
 
-DropTrashTables -server "SAMSUNG-PC\SQLEXPRESS" -database "durkah" -trash "*_TBD*"
+DropTrashTables -server "SERVER\INSTANCE" -database "DB" -trash "*_TBD*"
