@@ -15,6 +15,6 @@ foreach ($f in $fs)
     }
     catch
     {
-        "I haz teh errorz"
+        "BAK failed verification."
     }
 }
