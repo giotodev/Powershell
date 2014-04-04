@@ -3,7 +3,7 @@
   This script will compare jobs in a QA environment to jobs in a PROD environment then script out the jobs in QA that
   don't exist in PROD.
   
-  After the step $j.Script() | Out-File $jobFile, we can add $j.Drop if we want to remove the job.
+  After the step $j.Script() | Out-File $jobFile, we can perform a drop if necessary (though not inside the loop).
   Save script to variable, use variable to .Replace("string","stringtwo")
   
 #>
