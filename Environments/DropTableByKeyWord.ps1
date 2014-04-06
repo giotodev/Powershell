@@ -10,16 +10,21 @@
     $cmd.Connection = $scon
     $eachTable = @()
     $db = $srv.Databases[$database]
+    ## Older than this timespan, will be removed
+    $three = New-TimeSpan -Days 90
 
     foreach ($table in $db.Tables)
     {
         $x = $table.Name
-        if ($x -like $trash)
+        $d = $table.CreateDate
+        if ($x -like $trash -and (((get-date) - $d) -gt $three))
         {
             $eachTable += $x
         }
     }
-    
+
+    ## Testing other
+
     foreach ($i in $eachTable)
     {
         $scon.Open()
@@ -28,6 +33,7 @@
         $scon.Close()
     }
 
+
 }
 
-DropTrashTables -server "SERVER\INSTANCE" -database "DB" -trash "*_TBD*"
+DropTrashTables -server "S\I" -database "DB" -trash "*KEYWORD*"
