@@ -28,7 +28,9 @@ try
         $copy = New-Object Data.SqlClient.SqlBulkCopy($dest)
         $copy.DestinationTableName = $bothTable
         $copy.WriteToServer($reading)
-        Write-Host "Table copied from " + $srcServer + " to " + $destServer + "."
+        ## "Table copied from " + $srcServer + "." $srcDatabase + " to " + $destServer + "." + $destDatabase + "."
+        ## Write-Host may not function
+        Write-Host "Table copied from " + $srcServer + "." $srcDatabase + " to " + $destServer + "." + $destDatabase + "."
     }
     catch [System.Exception]
     {
