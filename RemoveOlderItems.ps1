@@ -7,4 +7,5 @@ Function RemoveEarliestFiles($loc)
     $fs | Sort-Object LastWriteTime | Select-Object -First ($files.Count - 1) | Remove-Item
 }
 
-RemoveEarliestFiles -loc "C:\files\"
+## Put the file location below:
+RemoveEarliestFiles -loc "C:\OurFileLocation\"
