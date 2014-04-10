@@ -1,5 +1,3 @@
-// W.I.P
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,12 +11,13 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             var findem = new List<string>();
-            //string li = "the|quick|Abro|wnA|fox|jumped";
+            //string li = "the|quick|Abr|o|w|nA|fox|jumped|over|the|lazy|dogs"; //8 shows 11
             string norm = "the|quick|brown|fox|jumped|over|the|lazy|dogs"; //8
             string li = "theA|Aq|u|ickA|AbrownA|Af|o|xA|Ajumped|overA|AtheA|Alazy|dogs"; //8 shows 12
 
             // All Testing:
-            int diff = 4;
+            int diff = 4; //#2
+            //int diff = 3; //#1
 
             string rev = RevString(li);
             int x = 0, y = 0, z = 0, a = 0;
