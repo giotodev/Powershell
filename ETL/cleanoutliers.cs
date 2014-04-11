@@ -1,3 +1,5 @@
+// if extra char, pattern? within pattern, count char
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
