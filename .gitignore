@@ -4,3 +4,6 @@ Fo*.ps1
 YouTubeGooglePlusAPI.txt
 RemoveOlder*.ps1
 RemoveOlderItems.ps1
+ETL\MineData_InsertGoodData.ps1
+ETL\MineFile_BadData.ps1
+ETL*
