@@ -10,7 +10,7 @@
     $cmd.Connection = $scon
     $eachTable = @()
     $db = $srv.Databases[$database]
-    ## Older than this timespan, will be removed
+    ## Can be added as a parameter if the time changes.
     $three = New-TimeSpan -Days 90
 
     foreach ($table in $db.Tables)
@@ -23,8 +23,6 @@
         }
     }
 
-    ## Testing other
-
     foreach ($i in $eachTable)
     {
         $scon.Open()
@@ -32,7 +30,6 @@
         $cmd.ExecuteNonQuery()
         $scon.Close()
     }
-
 
 }
 
