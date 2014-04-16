@@ -10,4 +10,4 @@
     }
  }
 
- ZipEverything -src "\\dfsrvetl\loadstore\MLS-CL\incoming\" -dest "\\dfsrvetl\loadstore\MLS-CL\extract\"
+ ZipEverything -src "\\sourcelocation\tracefiles\" -dest "\\destinationlocation\tracefiles\"
