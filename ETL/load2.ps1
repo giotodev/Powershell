@@ -1,7 +1,8 @@
-﻿Function PSLoad($server, $database, $query, $location)
+﻿Function PSLoad_CSV($server, $database, $query, $location, $filename)
 {
     $scon = New-Object System.Data.SqlClient.SqlConnection
     $scon.ConnectionString = "SERVER=" + $server + ";DATABASE=" + $database + ";Integrated Security=true"
+    $export = $location + $filename + ".csv"
 
     $cmd = New-Object System.Data.SqlClient.SqlCommand
     $ad = New-Object System.Data.SqlClient.SqlDataAdapter
@@ -16,4 +17,4 @@
     
 }
 
-PSLoad -server "SEV" -database "DB" -query "SELECT * FROM SeveralColumns" -location "C:\files\sev.csv"
+PSLoad_CSV -server "SRV\INST" -database "DB" -query "SELECT * FROM Table" -location "C:\files\" -filename "Table"

@@ -1,10 +1,12 @@
 ﻿## Set-ExecutionPolicy unrestricted
 ## Import-Module SQLPS
 
-Function LoadCSV ($server, $database, $table)
+Function PSLoad ($server, $database, $table, $path)
 {
-    $table = "SeveralColumns"
-    invoke-sqlcmd -query "SELECT * FROM $table" -database $database -serverinstance $server | export-csv -path "C:\files\$table.csv"
+    $path = $path + $table + ".txt"
+    invoke-sqlcmd -query "SELECT * FROM $table" -database $database -serverinstance $server | Out-File -FilePath $path -Encoding string
 }
+
+PSLoad -server "SRV\INST" -database "DB" -table "Table" -path "C:\Files\"
 
 ## Set-ExecutionPolicy restricted

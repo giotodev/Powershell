@@ -6,3 +6,4 @@ RemoveOlder*.ps1
 RemoveOlderItems.ps1
 ETL*
 ETL\*
+ETL_*
