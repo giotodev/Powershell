@@ -7,3 +7,5 @@ RemoveOlderItems.ps1
 ETL*
 ETL\*
 ETL_*
+Administration\SourceControl\*
+MapReduce\*
