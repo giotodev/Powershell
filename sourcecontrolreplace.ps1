@@ -1,7 +1,7 @@
 
-
 $s = ""
 $d = ""
+$o = ""
 
 $scon = New-Object System.Data.SqlClient.SqlConnection
 $scon.ConnectionString = "SERVER=" + $s + ";DATABASE=" + $d + ";Integrated Security=true"
