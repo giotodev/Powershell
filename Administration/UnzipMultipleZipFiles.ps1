@@ -1,6 +1,7 @@
 ﻿Function ZipEverything($src, $dest)
  {
-    [System.Reflection.Assembly]::LoadWithPartialName("System.IO.Compression.FileSystem") | Out-Null
+    ##[System.Reflection.Assembly]::LoadWithPartialName("System.IO.Compression.FileSystem") | Out-Null
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
     $zps = Get-ChildItem $src -Filter *.zip
 
     foreach ($zp IN $zps)
