@@ -17,3 +17,12 @@ Function UnzipEverything($src, $dest)
 }
 
 ZipEverything -src "\\sourcelocation\tracefiles\" -dest "\\destinationlocation\tracefiles\extract\"
+
+
+Function ZipEverything($src, $dest)
+{
+   Add-Type -AssemblyName System.IO.Compression.FileSystem
+   [System.IO.Compression.ZipFile]::CreateFromDirectory($src, $dest)
+}
+
+UnzipEverything -src "C\\destinationlocation\tracefiles\extract" -dest "\\sourcelocation\tracefiles\file.zip"
