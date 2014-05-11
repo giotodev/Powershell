@@ -1,19 +1,19 @@
-﻿Function ZipEverything($src, $dest)
- {
-    ##[System.Reflection.Assembly]::LoadWithPartialName("System.IO.Compression.FileSystem") | Out-Null
-    Add-Type -AssemblyName System.IO.Compression.FileSystem
-    $zps = Get-ChildItem $src -Filter *.zip
+Function UnzipEverything($src, $dest)
+{
+   ## Deprecated:
+   ##[System.Reflection.Assembly]::LoadWithPartialName("System.IO.Compression.FileSystem") | Out-Null
+   Add-Type -AssemblyName System.IO.Compression.FileSystem
+   $zps = Get-ChildItem $src -Filter *.zip
 
-    foreach ($zp IN $zps)
-    {
-        $all = $src + $zp
-        [System.IO.Compression.ZipFile]::ExtractToDirectory($all, $dest)
-    }
+   foreach ($zp IN $zps)
+   {
+       $all = $src + $zp
+       [System.IO.Compression.ZipFile]::ExtractToDirectory($all, $dest)
+   }
 
-    ## Server, Database, Table - IMP ONLY
-    ##$scon = New-Object System.Data.SqlClient.SqlConnection
-    ##$scon.ConnectionString = "SERVER=" + $server + ";DATABASE=" + $database + ";Integrated Security=true"
- }
+   ## Server, Database, Table - IMP ONLY
+   ##$scon = New-Object System.Data.SqlClient.SqlConnection
+   ##$scon.ConnectionString = "SERVER=" + $server + ";DATABASE=" + $database + ";Integrated Security=true"
+}
 
- ZipEverything -src "\\sourcelocation\tracefiles\" -dest "\\destinationlocation\tracefiles\"
-
+ZipEverything -src "\\sourcelocation\tracefiles\" -dest "\\destinationlocation\tracefiles\extract\"
