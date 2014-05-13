@@ -5,8 +5,10 @@ YouTubeGooglePlusAPI.txt
 RemoveOlder*.ps1
 RemoveOlderItems.ps1
 ETL*
-ETL\*
+ETL/*
 ETL_*
-Administration\SourceControl\*
-MapReduce\*
+Administration/SourceControl/*
+MapReduce/*
 ValidateObjects.ps1
+Environments/F*.ps1
+Environments/script*.ps1
