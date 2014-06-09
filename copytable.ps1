@@ -1,3 +1,5 @@
+## Consider the amount of data before using, as this uses a data table
+
 ## Source
 $srcServer = "SERVERONE\INSTANCE"
 $srcDatabase = "DatabaseOne"
