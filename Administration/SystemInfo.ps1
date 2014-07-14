@@ -7,7 +7,7 @@ $os = (Get-WmiObject -class "Win32_OperatingSystem").Caption
 $bit = (Get-WmiObject win32_operatingsystem).OSArchitecture
 
 ## Gig Memory
-$mem = ((Get-WmiObject -Class "Win32_PhysicalMemory").Capacity/(1024*1024*1024))
+$mems = Get-WmiObject -Class "Win32_PhysicalMemory" | Select-Object Capacity
 
 ## Hard Drive Space name, total size, available free space
 $ds = Get-WmiObject -Class "Win32_LogicalDisk" | Select-Object Name, Size, FreeSpace
@@ -19,11 +19,19 @@ Write-Host "64 or 32 bit?"
 $bit
 $nl
 Write-Host "Available memory?" $nl
-$mem
+foreach ($mem in $mems)
+{
+    if ($mem.Capacity -gt 0)
+    {
+        "Memory: " + ($mem.Capacity/(1024*1024*1024)).ToString()
+    }
+}
 $nl
 Write-Host "Hard drive capability and free space?" $nl
-$nl
 foreach ($d in $ds)
 {
-    $d.Name + " available space - " + ($d.Size/(1024*1024*1024)).ToString() + ", free space - " + ($d.FreeSpace/(1024*1024*1024)).ToString()
+    if ($d.Size -gt 0)
+    {
+        $d.Name + " available space - " + ($d.Size/(1024*1024*1024)).ToString() + ", free space - " + ($d.FreeSpace/(1024*1024*1024)).ToString()
+    }
 }
