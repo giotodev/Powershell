@@ -35,3 +35,5 @@ foreach ($d in $ds)
         $d.Name + " available space - " + ($d.Size/(1024*1024*1024)).ToString() + ", free space - " + ($d.FreeSpace/(1024*1024*1024)).ToString()
     }
 }
+
+## driverquery.exe
