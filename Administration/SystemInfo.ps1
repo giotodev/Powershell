@@ -36,4 +36,4 @@ foreach ($d in $ds)
     }
 }
 
-## driverquery.exe
+## driverquery.exe | Out-File "C:\driver.txt" #ps del
