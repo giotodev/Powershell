@@ -1,4 +1,4 @@
 
-[]  3 .NET
-[]  500
-[]  3 modules
+[D-PS]  3 .NET
+[D-6X]  500
+[D-4X]  3 modules
