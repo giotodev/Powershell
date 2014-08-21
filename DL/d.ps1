@@ -19,7 +19,6 @@ Function DNEC_Rating($t, $c, $no = $null, $de = $null)
     $b_json
 }
 
-DNEC_Rating -t "DEV" -c "ta7" -no 7 -de "Nw 7"
+## EXAMPLE:
+DNEC_Rating -t "DEV" -c "ta7" -no 7 -de "nw 7"
 
-## JSON doc
-## Auto bk
