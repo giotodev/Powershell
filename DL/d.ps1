@@ -1,4 +1,4 @@
-Function DNEC_Rating($t, $c, $no = $null, $de = $null)
+Function DNEC_Assessment($t, $c, $no = $null, $de = $null)
 {
     $time = Get-Date
 
@@ -20,5 +20,5 @@ Function DNEC_Rating($t, $c, $no = $null, $de = $null)
 }
 
 ## EXAMPLE:
-DNEC_Rating -t "DEV" -c "ta7" -no 7 -de "nw 7"
+DNEC_Assessment -t "DEV" -c "ta7" -no 7 -de "nw 7"
 
