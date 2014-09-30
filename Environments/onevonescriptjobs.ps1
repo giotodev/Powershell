@@ -6,6 +6,8 @@
   After the step $j.Script() | Out-File $jobFile, we can perform a drop if necessary (though not inside the loop).
   Save script to variable, use variable to .Replace("string","stringtwo")
   
+  Alternative script built 9/29 based on this; env.-env.
+  
 #>
 
 
