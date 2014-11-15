@@ -1,4 +1,5 @@
-﻿$scon = New-Object System.Data.SqlClient.SqlConnection
+### Outdated
+$scon = New-Object System.Data.SqlClient.SqlConnection
 $scon.ConnectionString = "SERVER=SRV;Integrated Security=true;DATABASE=DB"
 $add = New-Object System.Data.SqlClient.SqlCommand
 $add.Connection = $scon
