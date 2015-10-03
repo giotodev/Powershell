@@ -5,7 +5,7 @@ Function Execute-Sql {
     Process
     {
         $scon = New-Object System.Data.SqlClient.SqlConnection
-        $scon.ConnectionString = "Data Source=SAMSUNG-PC\SQLEXPRESS;Initial Catalog=Bitcoin;Integrated Security=true;Connection Timeout=0"
+        $scon.ConnectionString = ""
         
         $cmd = New-Object System.Data.SqlClient.SqlCommand
         $cmd.Connection = $scon
