@@ -10,6 +10,7 @@ Function Execute-Sql {
         $cmd = New-Object System.Data.SqlClient.SqlCommand
         $cmd.Connection = $scon
         $cmd.CommandTimeout = 0
+        $cmd.CommandText = $command
 
         try
         {
