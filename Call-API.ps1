@@ -1,3 +1,4 @@
+### Link:  https://steemit.com/technology/@sqlinsix/powershell-quick-api-basic-function
 Function Call-API {
     Param(
         [Parameter(Mandatory=$true)][string]$apiparam
