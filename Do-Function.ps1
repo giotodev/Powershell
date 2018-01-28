@@ -4,6 +4,7 @@ Function Do-Function {
     [Parameter(Mandatory=$false)][string]$notrequired
     , [Parameter(Mandatory=$true)][ValidateSet("1","2","3","Other")]$set
     , [Parameter(Mandatory=$true)][ValidateRange(0,10)]$range
+    , [Parameter(Mandatory=$true)][ValidateLength(5,20)][string]$length
   )
   Process
   {
