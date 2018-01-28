@@ -8,7 +8,7 @@ Function Do-Function {
   )
   Process
   {
-    Write-Host "Is the parameter included?  $notrequired$set"
+    Write-Host "Is the parameter included?  $notrequired$set$length"
     Write-Host (20/$range).ToString()
   }
 }
