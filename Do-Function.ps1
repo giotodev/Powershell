@@ -2,13 +2,13 @@
 Function Do-Function {
   Param(
     [Parameter(Mandatory=$false)][string]$notrequired
-    , [Parameter(Mandatory=$true)][ValidateSet("1","2","3","Other")]$set
-    , [Parameter(Mandatory=$true)][ValidateRange(0,10)]$range
-    , [Parameter(Mandatory=$true)][ValidateLength(5,20)][string]$length
+    , [Parameter(Mandatory=$false)][ValidateSet("1","2","3","Other")]$set
+    , [Parameter(Mandatory=$false)][ValidateRange(0,10)]$range
+    , [Parameter(Mandatory=$false)][ValidateLength(5,20)][string]$length
+    , [Parameter(Mandatory=$false)][ValidatePattern("[A-Z][-]\d{1}")][string]$pattern
+    , [Parameter(Mandatory=$true)][ValidateLength(3,3)][ValidatePattern("[A-Z][-]\d{1}")][string]$double
   )
   Process
   {
-    Write-Host "Is the parameter included?  $notrequired$set$length"
-    Write-Host (20/$range).ToString()
   }
 }
